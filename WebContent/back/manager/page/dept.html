@@ -1,0 +1,29 @@
+<table id="dept_data" data-option="fit:true"></table>
+
+<script type="text/javascript">
+$('#dept_data').datagrid({
+	url:'../dept',
+	queryParams:{op:"findByPage"},
+	fitColumns:true,
+	striped:true,
+	loadMsg:"数据加载中,请稍后...",
+	pagination:true,
+	rownumbers:true,
+	pageSize:3,
+	pageList:[3,5,10,20,30,40,50],
+	columns:[[
+		{field:'deptno',title:'部门编号',width:100,align:'center'},         
+		{field:'dname',title:'部门名称',width:100,align:'center'},         
+		{field:'loc',title:'部门地址',width:100,align:'center'},     
+	]],
+	toolbar:[{
+		text:"编辑",
+		inconCls:'icon-edit',
+		handler:function(){alert('编辑按钮')}
+	},'-',{
+		text:"帮助",
+		inconCls:'icon-edit',
+		handler:function(){alert('帮助按钮')}
+	}]
+});
+</script>
